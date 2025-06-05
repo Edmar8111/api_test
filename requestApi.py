@@ -8,10 +8,12 @@ app = Flask(__name__)
 
 data={"mensagem":"request message", "status":"API Online"}
 
+
 @app.route('/api', methods=['GET'])
 def get_data():
     if request.method=='GET':
         print('Request')
+    #Open a html file
     with open('index.html', 'rb') as f:
         doc=f.read()
     return doc
